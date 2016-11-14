@@ -1,0 +1,13 @@
+1) Tell us how you validate your model, which, and why did you chose such evaluation technique(s).
+
+2) What is AUC? 
+
+3) Why do you think AUC was used as the evaluation metric for such a problem? 
+
+4) What are other metrics that you think would also be suitable for this competition?
+
+5) What insight(s) do you have from your model? 
+
+6) What is your preliminarily analysis of the given dataset?
+
+4) Can you get into top 100 of the private leaderboard, or even higher?

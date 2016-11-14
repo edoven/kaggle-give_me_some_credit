@@ -1,1 +1,1 @@
-# kaggle-give_me_some_credit
+Solution to the Kaggle competition ["Give Me Some Credit"](https://www.kaggle.com/c/GiveMeSomeCredit)
