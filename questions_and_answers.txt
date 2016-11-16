@@ -1,13 +1,39 @@
 1) Tell us how you validate your model, which, and why did you chose such evaluation technique(s).
 
+[answer]
+For evaluation I simply use the standard 10-fold cross validation (I can use 3 or 5 folds when the model is very slow).
+I use cross validation because I don't have many choises, it the most used method and it just works.
+
+
+
 2) What is AUC? 
 
-3) Why do you think AUC was used as the evaluation metric for such a problem? 
+[answer]
+AUC stands for area under the ROC curve.
+The ROC curve is generated using false positive rates and true positive rates.
+To get these values, different thresholds are used in the interval [0,1].
+A threshold here is used to decide if a prediction belongs to a class or the other (in a binary problem) based on the predicted probability (e.g. if prediction_probability > 0.6 then class=1 else class=0).
 
-4) What are other metrics that you think would also be suitable for this competition?
 
-5) What insight(s) do you have from your model? 
+3) Why do you think AUC was used as the evaluation metric for such a problem? What are other metrics that you think would also be suitable for this competition?
 
-6) What is your preliminarily analysis of the given dataset?
+[answer]
+Because AUC is an unbiased metric and it's also good for unbalanced problems (e.g. the target variable is 1 in 99% of cases and 0 in 1% of cases).
+Other very common measures like recall, precision, f1 score, etc. are biased because are based on a given threshold (default is 0.5).
+AUC is "threshold agnostic" and allows to evaluate one model against another without the need of choosing a threshold.
+In fact, one model can perform better with a threshold of 0.7 while another with a threshold of 0.65.
 
-4) Can you get into top 100 of the private leaderboard, or even higher?
+I've seen other competitions using logloss that is also an unbiased metric.
+To be honest, I've never used this metric for work-related problems (we use AUC in general).
+I know that log loss gives a very strong penaly to "strongly" false positives and "strongly" false negatives (strongly means that the probability is very close to 0 or 1).
+
+In general I think the precision-recall curve (it's kinda similar to ROC curve) has higher interpretability than ROC, but this is very personal!
+
+
+4) What insight(s) do you have from your model? 
+
+5) What is your preliminarily analysis of the given dataset?
+
+[answer]
+I did a short EDA (full results here https://github.com/edoven/kaggle-give_me_some_credit/tree/master/EDA ).
+..explain better..
