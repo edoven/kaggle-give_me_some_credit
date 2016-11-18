@@ -2,7 +2,7 @@
 
 [answer]
 For evaluation I simply use the standard 10-fold cross validation (I can use 3 or 5 folds when the model is very slow).
-I use cross validation because I don't have many choises, it the most used method and it just works.
+I use cross validation because I don't have many choises, it the most used method and it just works. :)
 
 
 
@@ -22,18 +22,21 @@ Because AUC is an unbiased metric and it's also good for unbalanced problems (e.
 Other very common measures like recall, precision, f1 score, etc. are biased because are based on a given threshold (default is 0.5).
 AUC is "threshold agnostic" and allows to evaluate one model against another without the need of choosing a threshold.
 In fact, one model can perform better with a threshold of 0.7 while another with a threshold of 0.65.
+Usually it's also up to the final user to decide if they want more recall and less precision (e.g. to predict a rare disease) or viceversa (e.g. to decide who should take a loan)
 
-I've seen other competitions using logloss that is also an unbiased metric.
+I've seen, in other competitions, logloss being used because it also is an unbiased metric.
 To be honest, I've never used this metric for work-related problems (we use AUC in general).
 I know that log loss gives a very strong penaly to "strongly" false positives and "strongly" false negatives (strongly means that the probability is very close to 0 or 1).
 
-In general I think the precision-recall curve (it's kinda similar to ROC curve) has higher interpretability than ROC, but this is very personal!
+In general, to add something about AUC and ROC curve, I think the precision-recall curve (it's kinda similar to ROC curve) has higher interpretability than ROC, but this is very personal (and the difference is very small)!
 
 
 4) What insight(s) do you have from your model? 
+I saw that not very complex solutions work good (like a basic gradient boost classifier with a balanced classifier).
+I also tried to manage null values in a "complex" way but it didn't help. Sometimes managing null values in the right way can be a key point to win a kaggle competition.
+Another thing is that balancing classes can help a lot. I used the same approach at work with a dataset that was way more unbalanced (1% in one class, 99% in the other class) and it gave very good results.
 
 5) What is your preliminarily analysis of the given dataset?
 
 [answer]
-I did a short EDA (full results here https://github.com/edoven/kaggle-give_me_some_credit/tree/master/EDA ).
-..explain better..
+I did a short EDA, you can find results here: https://github.com/edoven/kaggle-give_me_some_credit/tree/master/EDA
