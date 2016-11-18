@@ -1,5 +1,2 @@
-- play with class balancing
-- create a model to fill nan values
-- play with paramers tuning
-- try xgboost
-- try stacking
+- check stacking
+- play with class balancing and sampling
